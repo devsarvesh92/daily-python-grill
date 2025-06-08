@@ -22,3 +22,14 @@ def group_anagrams(*,input:list[str])->list[list[str]]:
 
     
     return [v for k,v in gp.items()]
+
+def top_k_frequent_elements(*,nums:list[int],k:int)->list[int]:
+    d:dict[int,int] = defaultdict(int)
+
+    for i in nums:
+        d[i]+=1
+    
+    sd:dict[int,int] = dict(sorted(d.items(),key=lambda k:k[1],reverse=True))
+    return list(sd.values())[:k]
+
+
