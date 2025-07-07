@@ -2,6 +2,7 @@ import pytest
 
 from src.array_hashing import (
     group_anagrams,
+    longest_consecutive_sequence,
     top_k_frequent_elements,
     product_of_array_execept_self,
 )
@@ -22,3 +23,7 @@ def test_top_k_frequent_elements():
 
 def test_product_of_array_except_self():
     assert [48, 24, 12, 8] == product_of_array_execept_self(nums=[1, 2, 4, 6])
+
+
+def test_longest_consecutive_sequence():
+    assert 4 == longest_consecutive_sequence(nums=[2, 20, 4, 10, 3, 4, 5])

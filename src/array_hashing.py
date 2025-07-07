@@ -42,3 +42,19 @@ def product_of_array_execept_self(*, nums: list[int]) -> list[int]:
         suffix *= nums[i]
 
     return result
+
+
+def longest_consecutive_sequence(*, nums: list[int]) -> int:
+    """
+    Find the longest concecutive sequnce
+    """
+    hs = set(nums)
+    longest = 0
+
+    for num in nums:
+        if num - 1 not in hs:
+            length = 1
+            while num + length in hs:
+                length += 1
+            longest = max(length, longest)
+    return longest
