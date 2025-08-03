@@ -46,6 +46,9 @@ wheels = [
 name = "daily-python-grill"
 version = "0.1.0"
 source = { virtual = "." }
+dependencies = [
+    { name = "pytest" },
+]
 
 [package.dev-dependencies]
 dev = [
@@ -54,6 +57,7 @@ dev = [
 ]
 
 [package.metadata]
+requires-dist = [{ name = "pytest", specifier = ">=8.4.0" }]
 
 [package.metadata.requires-dev]
 dev = [
